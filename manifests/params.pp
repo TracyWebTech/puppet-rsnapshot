@@ -14,4 +14,8 @@ class rsnapshot::params {
 
   $snapshot_root = '/var/cache/rsnapshot/'
   $logfile = '/var/log/rsnapshot.log'
+
+  $backup_path = undef
+  $backup_host = undef
+  $backup_user = undef
 }
