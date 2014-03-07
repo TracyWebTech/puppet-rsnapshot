@@ -40,24 +40,24 @@ class rsnapshot (
   $command = $snapshot::params::command,
 ) inherits rsnapshot::params {
 
-  package { "$package":
+  package { $package:
     ensure => installed,
   }
 
-  cron { 'rsnapshot hourly',
+  cron { 'rsnapshot hourly':
     user    => root,
     command => "$command hourly",
     minute  => 0,
   }
 
-  cron { 'rsnapshot daily',
+  cron { 'rsnapshot daily':
     user    => root,
     command => "$command daily",
     minute  => 30,
     hour    => 3,
   }
 
-  cron { 'rsnapshot weekly',
+  cron { 'rsnapshot weekly':
     user    => root,
     command => "$command weekly",
     minute  => 0,
@@ -65,7 +65,7 @@ class rsnapshot (
     weekday => 'Sunday',
   }
 
-  cron { 'rsnapshot monthly',
+  cron { 'rsnapshot monthly':
     user     => root,
     command  => "$command monthly",
     minute   => 30,
