@@ -11,4 +11,7 @@ class rsnapshot::params {
       fail("The ${module_name} module is not supported on an ${::osfamily} based system.")
     }
   }
+
+  $snapshot_root = '/var/cache/rsnapshot/'
+  $logfile = '/var/log/rsnapshot.log'
 }

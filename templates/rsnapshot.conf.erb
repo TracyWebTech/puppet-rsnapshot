@@ -24,7 +24,7 @@ config_version	1.2
 
 # All snapshots will be stored under this root directory.
 #
-snapshot_root	/var/cache/rsnapshot/
+snapshot_root	<%= @snapshot_root %>
 
 # If no_create_root is enabled, rsnapshot will not automatically create the
 # snapshot_root directory. This is particularly useful if you are backing
@@ -64,7 +64,7 @@ cmd_logger	/usr/bin/logger
 # If you have an older version of "du", you may also want to check the
 # "du_args" parameter below.
 #
-#cmd_du		/usr/bin/du
+cmd_du		/usr/bin/du
 
 # Uncomment this to specify the path to rsnapshot-diff.
 #
@@ -94,7 +94,7 @@ cmd_logger	/usr/bin/logger
 # i.e. hourly, daily, weekly, etc.      #
 #########################################
 
-retain		hourly	6
+retain		hourly	24
 retain		daily	7
 retain		weekly	4
 #retain	monthly	3
@@ -121,7 +121,7 @@ loglevel	3
 # If you enable this, data will be written to the file you specify. The
 # amount of data written is controlled by the "loglevel" parameter.
 #
-#logfile	/var/log/rsnapshot.log
+logfile	<%= @logfile %>
 
 # If enabled, rsnapshot will write a lockfile to prevent two instances
 # from running simultaneously (and messing up the snapshot_root).
