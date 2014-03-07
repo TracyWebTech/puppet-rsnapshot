@@ -81,4 +81,11 @@ class rsnapshot (
     mode    => 0644,
     content => template('rsnapshot/rsnapshot.conf.erb'),
   }
+
+  file { '/etc/rsnapshot.includes':
+    ensure => file,
+    owner  => root,
+    group  => root,
+    mode   => 0644,
+  }
 }
