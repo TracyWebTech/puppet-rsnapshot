@@ -4,6 +4,7 @@ class rsnapshot::params {
     'debian': {
       $package = 'rsnapshot'
       $command = '/usr/bin/rsnapshot'
+      $config_file = '/etc/rsnapshot.conf'
     }
 
     default: {

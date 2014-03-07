@@ -37,7 +37,8 @@
 #
 class rsnapshot (
   $package = $rsnapshot::params::package,
-  $command = $snapshot::params::command,
+  $command = $rsnapshot::params::command,
+  $config_file = $rsnapshot::params::config_file,
 ) inherits rsnapshot::params {
 
   package { $package:
@@ -73,4 +74,11 @@ class rsnapshot (
     monthday => 1,
   }
 
+  file { $config_file:
+    ensure  => file,
+    owner   => root,
+    group   => root,
+    mode    => 0644,
+    content => template('rsnapshot/rsnapshot.conf.erb'),
+  }
 }
