@@ -1,10 +1,10 @@
 
-class rsnapshot::backup(
+define rsnapshot::backup (
   $path = $rsnapshot::params::backup_path,
   $host = $rsnapshot::params::backup_host,
   $user = $rsnapshot::params::backup_user,
   $rsnapshot_include_file = $rsnapshot::params::rsnapshot_include_file,
-) inherits rsnapshot::params {
+) {
 
   if ($host) {
     if ($user) {
