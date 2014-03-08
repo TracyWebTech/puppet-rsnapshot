@@ -6,7 +6,7 @@ define rsnapshot::backup (
   $rsnapshot_include_file = $rsnapshot::params::rsnapshot_include_file,
 ) {
 
-  validate_re($path, ['/$'], '$path must end with a trailing slash')
+  validate_re($path, ['/$'], "\$path must end with a trailing slash [$path]")
 
   if ($host) {
     if ($user) {
