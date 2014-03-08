@@ -41,9 +41,7 @@ class rsnapshot (
   $config_file = $rsnapshot::params::config_file,
 ) inherits rsnapshot::params {
 
-  package { $package:
-    ensure => installed,
-  }
+  ensure_packages([$package])
 
   cron { 'rsnapshot hourly':
     user    => root,
