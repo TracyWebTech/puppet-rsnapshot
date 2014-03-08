@@ -17,7 +17,6 @@ class rsnapshot::params {
 
   $rsnapshot_include_file = '/etc/rsnapshot.includes'
 
-  $backup_path = undef
   $backup_host = undef
   $backup_user = undef
 }
