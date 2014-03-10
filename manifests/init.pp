@@ -47,6 +47,7 @@ class rsnapshot (
     user    => root,
     command => "$command hourly",
     minute  => 0,
+    hour    => '*/4',
   }
 
   cron { 'rsnapshot daily':
