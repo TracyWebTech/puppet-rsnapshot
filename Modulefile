@@ -1,4 +1,4 @@
-name    'puppet-rsnapshot'
+name    'tracywebtech-rsnapshot'
 version '0.1.0'
 source 'https://github.com/TracyWebTech/puppet-rsnapshot'
 author 'Tracy Web Technologies'
