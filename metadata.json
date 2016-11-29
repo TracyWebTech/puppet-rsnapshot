@@ -1,6 +1,6 @@
 {
   "name": "tracywebtech-rsnapshot",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Tracy Web Technologies",
   "summary": "Puppet module to manage backups using rsnapshot",
   "license": "Apache-2.0",
