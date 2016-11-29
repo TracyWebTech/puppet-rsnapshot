@@ -14,13 +14,21 @@ define rsnapshot::backup (
     } else {
       $target = "${host}:${path}"
     }
-    $dest = $host
   } else {
     $target = $path
-    $dest = 'localhost'
   }
 
-  $line = "backup\t${target}\t\t${dest}/"
+  if($dest) {
+    $store = $dest
+  } else {
+    if($host) {
+      $store = $host
+    } else {
+      $store = 'localhost'
+    }
+  }
+
+  $line = "backup\t${target}\t\t${store}/"
 
   file_line { $line:
     path => $rsnapshot_include_file,
