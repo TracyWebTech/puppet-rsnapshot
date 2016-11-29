@@ -41,7 +41,7 @@ class rsnapshot (
     ensure  => file,
     owner   => root,
     group   => root,
-    mode    => 0644,
+    mode    => '0644',
     content => template('rsnapshot/rsnapshot.conf.erb'),
   }
 
@@ -49,6 +49,6 @@ class rsnapshot (
     ensure => file,
     owner  => root,
     group  => root,
-    mode   => 0644,
+    mode   => '0644',
   }
 }
