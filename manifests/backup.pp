@@ -6,13 +6,13 @@ define rsnapshot::backup (
   $rsnapshot_include_file = $rsnapshot::params::rsnapshot_include_file,
 ) {
 
-  validate_re($path, ['/$'], "\$path must end with a trailing slash [$host:$path]")
+  validate_re($path, ['/$'], "\$path must end with a trailing slash [${host}:${path}]")
 
   if ($host) {
     if ($user) {
-      $target = "$user@$host:$path"
+      $target = "${user}@${host}:${path}"
     } else {
-      $target = "$host:$path"
+      $target = "${host}:${path}"
     }
     $dest = $host
   } else {
@@ -20,7 +20,7 @@ define rsnapshot::backup (
     $dest = 'localhost'
   }
 
-  $line = "backup\t$target\t\t$dest/"
+  $line = "backup\t${target}\t\t${dest}/"
 
   file_line { $line:
     path => $rsnapshot_include_file,

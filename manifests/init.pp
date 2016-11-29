@@ -9,21 +9,21 @@ class rsnapshot (
 
   cron { 'rsnapshot hourly':
     user    => root,
-    command => "$command hourly",
+    command => "${command} hourly",
     minute  => 0,
     hour    => '*/4',
   }
 
   cron { 'rsnapshot daily':
     user    => root,
-    command => "$command daily",
+    command => "${command} daily",
     minute  => 30,
     hour    => 3,
   }
 
   cron { 'rsnapshot weekly':
     user    => root,
-    command => "$command weekly",
+    command => "${command} weekly",
     minute  => 0,
     hour    => 3,
     weekday => 'Sunday',
@@ -31,7 +31,7 @@ class rsnapshot (
 
   cron { 'rsnapshot monthly':
     user     => root,
-    command  => "$command monthly",
+    command  => "${command} monthly",
     minute   => 30,
     hour     => 3,
     monthday => 1,
